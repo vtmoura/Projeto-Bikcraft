@@ -9,7 +9,7 @@ Bikcraft é um site responsivo e moderno que apresenta uma linha de bicicletas f
 ![Versão Desktop](./prints/captura-desktop.png)
 
 ### 📱 Mobile
-![Versão Mobile](./prints/captura-mobile.png)
+<img src="./prints/captura-mobile.png" alt="captura de tela mobile"/>
 
 ### 📱 Tablet
 ![Versão Tablet](./prints/captura-tablet.png)
