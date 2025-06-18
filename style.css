@@ -1,12 +1,39 @@
+:root {
+  --cor-primaria: #ffa006;
+  --cor-escura: #be7604;
+  --fundo-1: #e7e7e7;
+  --fundo-2: #fff;
+  --texto: #000000;
+  --menu: #ffffff;
+  --subtitulo: rgba(0, 0, 0, 0.2);
+  --fundo-menu: #111;
+  --texto-menu: #ffffff;
+  --onda:  url("/img/img/onda.clara.svg");
+}
+
+@media (prefers-color-scheme: dark){
+  :root {
+    --fundo-1: #111;
+    --fundo-2: #000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --fundo-menu: #fffbfb57;
+    --onda:  url("/img/img/onda.escura.svg");
+  } 
+}
+
+
+
 body {
   font-family: arial, Arial, Helvetica, sans-serif;
   margin: 0px;
   margin-top: 3.75rem;
   padding-top: 80px;
-  background: #e7e7e7;
+  background: var(--fundo-1);
   display: grid;
   gap: 2rem;
   justify-items: center;
+  color: var(--texto);
 }
 
 img {
@@ -42,7 +69,7 @@ ul {
   top: 0;
   left: 0;
   right: 0;
-  background: #111;
+  background: #000;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -53,7 +80,7 @@ ul {
 /* Logo */
 .logo {
   height: 40px;
-  color: #e7e7e7;
+  color: var(--menu);
   text-transform: uppercase;
 }
 
@@ -71,10 +98,10 @@ ul {
 }
 
 .menu a {
-  background: #111;
+  /* background: #111; */
   padding: 10px 20px;
   border-radius: 4px;
-  color: #fff;
+  color: var(--texto-menu);
   text-transform: uppercase;
   font-weight: bold;
   position: relative;
@@ -84,7 +111,7 @@ ul {
 }
 
 .menu a:hover {
-  color: #ffa006;
+  color: var(--cor-primaria);
   transform: scale(1.05);
 }
 
@@ -95,7 +122,7 @@ ul {
   left: 0;
   width: 0;
   height: 3px;
-  background: #ffa006;
+  background: var(--cor-primaria);
   transition: all 0.3s ease;
 }
 
@@ -124,7 +151,7 @@ ul {
   display: block;
   width: 30px;
   height: 2px;
-  background: #fff;
+  background: var(--menu);
   position: relative;
   transition: all 0.3s ease;
 }
@@ -135,7 +162,7 @@ ul {
   position: absolute;
   width: 30px;
   height: 2px;
-  background: #fff;
+  background: var(--menu);
   left: 0;
   transition: all 0.3s ease;
 }
@@ -175,7 +202,7 @@ ul {
 }
 
 .introducao {
-  background: #ffffff;
+  background: var(--fundo-2);
   padding: 40px;
   text-align: right;
   position: relative;
@@ -195,7 +222,7 @@ ul {
   height: 4px;
   top: 30px;
   right: -30px;
-  background: #ffa006;
+  background: var(--cor-primaria);
   position: absolute;
 }
 
@@ -206,15 +233,15 @@ ul {
 
 /* Botão */
 .botao-ver-mais {
-  background: #ffa006;
-  color: #fff;
+  background: var(--cor-primaria);
+  color: var(--fundo-2);
   padding: 15px 30px;
   border-radius: 4px;
   text-transform: uppercase;
 }
 
 .botao-ver-mais:hover {
-  background: #be7604;
+  background: var(--cor-escura);
 }
 
 /* Subtítulo */
@@ -222,15 +249,16 @@ ul {
   font-size: 4rem;
   padding: 2.5rem;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--subtitulo);
   text-align: right;
   align-self: center;
-  background-image: url("/img/img/onda.svg");
+  background-image: var(--onda)
 }
+
 
 /* Vantagens */
 .vantagens {
-  background: #fff;
+  background: var(--fundo-2);
   padding: 40px;
 }
 
@@ -242,11 +270,11 @@ ul {
 }
 
 .icones {
-  color:#ffa006
+  color:var(--cor-primaria)
 }
 
 .vantagens-item:hover {
-  border-left: 4px solid #ffa006;
+  border-left: 4px solid var(--cor-primaria);
 }
 
 .vantagens-item p {
@@ -254,12 +282,12 @@ ul {
 }
 
 .vantagens-item:nth-child(odd) {
-  background: #e7e7e7;
+  background: var(--fundo-1);
 }
 
 /* Rodapé */
 .rodape {
-  background: #111;
+  background: #000;
   width: 100%;
   text-align: center;
   padding: 40px;
@@ -271,7 +299,7 @@ ul {
 }
 
 .rodape a {
-  color: #ffa006;
+  color: var(--cor-primaria);
 }
 
 /* Responsivo: até 1000px */
@@ -324,6 +352,10 @@ ul {
     padding: 20px;
     border-radius: 4px;
   }
+  .menu a {
+    background: var(--fundo-menu);
+    color: var(--texto-menu);
+  }
 
   .menu-toggle:checked + .menu-button + nav .menu {
     display: flex;
@@ -365,6 +397,10 @@ ul {
   .menu {
     display: none;
     flex-direction: column;
+  }
+  .menu a {
+    background: var(--fundo-menu);
+    color: var(--texto-menu);
   }
 
   .menu-toggle:checked + .menu-button + nav .menu {
